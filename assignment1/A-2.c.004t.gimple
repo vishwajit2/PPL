@@ -1,0 +1,48 @@
+f ()
+{
+  int a;
+  int b;
+  int c;
+
+  a = Z;
+  if (a <= 9) goto <D.1981>; else goto <D.1982>;
+  <D.1981>:
+  b = 5;
+  c = 17;
+  goto <D.1983>;
+  <D.1982>:
+  b = 6;
+  c = 20;
+  if (a == 0) goto <D.1984>; else goto <D.1985>;
+  <D.1984>:
+  c = 0;
+  <D.1985>:
+  <D.1983>:
+  _1 = b * 10;
+  _2 = c + _1;
+  Z = _2;
+}
+
+
+fun ()
+{
+  int iftmp.0;
+  int a;
+  int b;
+  int c;
+  int y;
+
+  a = 1;
+  b = 2;
+  c = 3;
+  if (a != 0) goto <D.1987>; else goto <D.1988>;
+  <D.1987>:
+  iftmp.0 = b;
+  goto <D.1989>;
+  <D.1988>:
+  iftmp.0 = c;
+  <D.1989>:
+  y = iftmp.0;
+}
+
+
