@@ -54,4 +54,22 @@ Questions
         3   Can you think of an example in which a PHI node merges more than two
             versions of a variable?
 
+Answer :
+        1.  In SSA form, program variables are assigned 
+            in exactly one location in the program. Multiple assignments to the same 
+            variable create new versions of that variable. Naturally, actual programs 
+            are rarely in SSA form initially because variables tend to be assigned multiple 
+            times. The compiler modifies the program representation so that every time a variable 
+            is assigned in the code, a new version of the variable is created. Different versions 
+            of the same variable are distinguished by subscripting the variable name with its version 
+            number. Variables used in the right-hand side of expressions are renamed so that their 
+            version number matches that of the most recent assignment.
+                (D) means it's missing a definition? (e.g. c is undefined in its use in the first 
+            conditional)
 
+        2.  Syntax of phi statements is  PHI < prec_1, prec_2, ... prec_n > where each
+            prec_i has form name(bb) where name is name of the variable and bb is index of
+            the basic block in which it was declared. There will be a prec_i for each
+            preceding BB from which control flow can enter the current BB.
+
+        3. In the Switch case statements and nested if-else blocks etc .
