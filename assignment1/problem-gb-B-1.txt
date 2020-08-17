@@ -8,7 +8,7 @@ B-1 Function Inlining
 
         Source file : B-1.c
         Compilation : gcc-4.7.2 -c -O2 -fdump-tree-all B-1.c
-        View result : vi -O B-1.c.*.ssa B-1.c.*.einline 
+        View result : vi -O B-1.c.*.ssa B-1.c.*.7 
         Clear dumps : rm -f B-1.c.* B-1.o
 
         Note: On some older versions of gcc the pass may be named "einline2".
@@ -38,4 +38,14 @@ Questions
             pass (B-1.c.*.optimized)?
 
         2   Is there any way to get rid of it?
+
+Answers : 
+	1. It can't be discarded, because it may be called from another translation 
+	   unit. (A translation unit is the basic unit of compilation in C++. It consists 
+	   of the contents of a single source file, plus the contents of any header files 
+	   directly or indirectly included by it, minus those lines that were ignored using 
+	   conditional preprocessing statements.)
+
+	2. Add the static keyword to the function prototype to signify that its linkage is
+  	   internal only.
 
